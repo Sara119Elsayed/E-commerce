@@ -1,16 +1,25 @@
-# React + Vite
+🛒 E-Commerce 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the frontend of E-Commerce, a modern e-commerce web application. The UI is built with React.js and JavaScript, focusing on a smooth user experience.
 
-Currently, two official plugins are available:
+🚀 Frontend Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Browse products with search, filtering, and category navigation
+Product details with dynamic routing
+Pagination and sorting (price, rating, title)
+Shopping cart interface
+Wishlist
+authentication
+Responsive design 
 
-## React Compiler
+🧰 Frontend Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React.js
+JavaScript
+Tailwind CSS – styling
 
-## Expanding the ESLint configuration
+📌 Notes
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This repository contains frontend only
+It consumes REST APIs from DummyJSON (https://dummyjson.com)
+Wishlist data is stored client-side (localStorage / React Context)
