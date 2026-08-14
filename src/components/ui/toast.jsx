@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect } from 'react'
-import styles from './ui.module.css'
 
 export default function Toast({ message, type = 'info', visible = true, onClose, autoHide = 3000 }) {
   useEffect(() => {
@@ -13,12 +12,12 @@ export default function Toast({ message, type = 'info', visible = true, onClose,
 
   if (!visible) return null
 
-  const cls = [styles.toast, type === 'success' ? styles.toastSuccess : type === 'error' ? styles.toastError : styles.toastInfo].join(' ')
+  const cls = ['toast', type === 'success' ? 'toast-success' : type === 'error' ? 'toast-error' : 'toast-info'].join(' ')
 
   return (
     <div className={cls} role="status">
       <div>{message}</div>
-      <button className={styles.toastClose} onClick={onClose} aria-label="close">
+      <button className="toast-close" onClick={onClose} aria-label="close">
         ×
       </button>
     </div>
