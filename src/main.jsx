@@ -11,6 +11,7 @@ import ProductsPage from './pages/ProductsPage.jsx'
 import Signup from './components/signup'
 import Wishlist from './components/wishlist'
 import ErrorPage from './pages/ErrorPage.jsx'
+import CartPage from './pages/CartPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       { path: 'login', element: <LoginForm />, errorElement: <ErrorPage /> },
       { path: 'signup', element: <Signup />, errorElement: <ErrorPage /> },
       { path: 'wishlist', element: <Wishlist />, errorElement: <ErrorPage /> },
+      { path: 'cart', element: <CartPage />, errorElement: <ErrorPage /> }
     ],
   },
 ]);

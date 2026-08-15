@@ -13,25 +13,24 @@ export default function Navbar() {
   return (
     <header className="top-nav">
       <div className="brand-block">
-        <span className="brand-mark">S</span>
+        <span className="brand-mark">🛒</span>
         <div>
-          <strong>Store</strong>
-          <small>Market</small>
-        </div>
+          <strong>Shelfly</strong>
+          </div>
       </div>
 
       <nav className="nav-links">
         <Link to="/" className={`nav-button ${isActive('/') && location.pathname === '/' ? 'active' : ''}`}>Home</Link>
         <Link to="/products" className={`nav-button ${isActive('/products') ? 'active' : ''}`}>Products</Link>
         <Link to="/about" className={`nav-button ${isActive('/about') ? 'active' : ''}`}>About</Link>
-       <Link to="/wishlist" className="nav-button">Wishlist {wishlist?.length || 0}</Link>
+       <Link to="/wishlist" className="nav-button">Wishlist</Link>
 
       </nav>
 
       <div className="nav-actions">
-        <div className="cart-badge">Cart {cartCount}</div>
+        <Link to="/cart" className="nav-button">Cart</Link>
         <Link to="/login" className="ui-button primary">Login</Link>
-        <Link to="/signup" className={`nav-button ${isActive('/signup') ? 'active' : ''}`}>Sign up</Link>
+        <Link to="/signup" className="ui-button primary">Sign up</Link>
 
       </div>
     </header>
