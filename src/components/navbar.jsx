@@ -13,7 +13,7 @@ export default function Navbar() {
   return (
     <header className="top-nav">
       <div className="brand-block">
-        <span className="brand-mark">🛒</span>
+        <span >🛒</span>
         <div>
           <strong>Shelfly</strong>
           </div>
@@ -21,7 +21,7 @@ export default function Navbar() {
 
       <nav className="nav-links">
         <Link to="/" className={`nav-button ${isActive('/') && location.pathname === '/' ? 'active' : ''}`}>Home</Link>
-        <Link to="/products" className={`nav-button ${isActive('/products') ? 'active' : ''}`}>Products</Link>
+        <Link to="/products" className={`nav-button ${isActive('/products') ? 'active' : ''}`}>Shop</Link>
         <Link to="/about" className={`nav-button ${isActive('/about') ? 'active' : ''}`}>About</Link>
        <Link to="/wishlist" className="nav-button">Wishlist</Link>
 
