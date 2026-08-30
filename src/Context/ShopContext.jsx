@@ -107,6 +107,7 @@ export function ShopProvider({ children }) {
     setCart((current) => current.filter((item) => item.id !== productId));
   };
 
+  
   const updateQuantity = (productId, quantity) => {
     if (quantity <= 0) {
       removeFromCart(productId);
@@ -119,7 +120,6 @@ export function ShopProvider({ children }) {
       ),
     );
   };
-
   const clearCart = () => setCart([]);
 
   const login = async (credentials) => {
