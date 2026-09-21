@@ -10,7 +10,7 @@ export default function AboutPage() {
           <h1>Built to make shopping simple</h1>
           <p>
             We're a small team obsessed with making online shopping fast, honest,
-            and easy — from search to checkout.
+            and easy.
           </p>
         </div>
       </section>
