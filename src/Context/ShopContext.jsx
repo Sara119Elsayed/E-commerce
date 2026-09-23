@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { addToCart as addCartRequest, getCart } from '../services/ProductService';
-import { login as loginRequest } from '../services/AuthService';
+import { login as loginRequest, register as registerRequest } from '../services/AuthService';
 
 const ShopContext = createContext(null);
 
@@ -67,6 +67,8 @@ export function ShopProvider({ children }) {
     [cart],
   );
 
+  const isAuthenticated = Boolean(user && token);
+
   const addToCart = (product, quantity = 1) => {
     setCart((current) => {
       const existing = current.find((item) => item.id === product.id);
@@ -107,7 +109,6 @@ export function ShopProvider({ children }) {
     setCart((current) => current.filter((item) => item.id !== productId));
   };
 
-  
   const updateQuantity = (productId, quantity) => {
     if (quantity <= 0) {
       removeFromCart(productId);
@@ -120,18 +121,42 @@ export function ShopProvider({ children }) {
       ),
     );
   };
+
   const clearCart = () => setCart([]);
+
+  const logout = () => {
+    setUser(null);
+    setToken('');
+  };
 
   const login = async (credentials) => {
     const result = await loginRequest(credentials);
-    setUser({
+    const nextUser = {
       id: result.id,
       username: result.username,
       firstName: result.firstName,
       lastName: result.lastName,
       email: result.email,
       image: result.image,
-    });
+    };
+
+    setUser(nextUser);
+    setToken(result.token || '');
+    return result;
+  };
+
+  const register = async (userData) => {
+    const result = await registerRequest(userData);
+    const nextUser = {
+      id: result.id,
+      username: result.username,
+      firstName: result.firstName,
+      lastName: result.lastName,
+      email: result.email,
+      image: result.image,
+    };
+
+    setUser(nextUser);
     setToken(result.token || '');
     return result;
   };
@@ -158,6 +183,7 @@ export function ShopProvider({ children }) {
       wishlist,
       cartCount,
       cartTotal,
+      isAuthenticated,
       addToCart,
       addToWishlist,
       removeFromWishlist,
@@ -167,12 +193,14 @@ export function ShopProvider({ children }) {
       updateQuantity,
       clearCart,
       login,
+      logout,
+      register,
       fetchCart,
       addCartRequestToServer,
       setUser,
       setToken,
     }),
-    [cart, user, token, wishlist, cartCount, cartTotal],
+    [cart, user, token, wishlist, cartCount, cartTotal, isAuthenticated],
   );
 
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
