@@ -31,9 +31,9 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Follow us</h4>
           <div className="footer-social">
-            <a href="#">🐦</a>
-            <a href="#">📸</a>
-            <a href="#">📘</a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
           </div>
         </div>
       </div>
