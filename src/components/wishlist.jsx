@@ -8,7 +8,7 @@ export default function Wishlist() {
 	if (!wishlist || wishlist.length === 0) {
 		return (
 			<div className="info-card">
-				<h3>Your wishlist is empty</h3>
+				<h3>Your wishlist is empty Now</h3>
 				<p>Browse products and add items to your wishlist.</p>
 			</div>
 		);
