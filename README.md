@@ -4,22 +4,22 @@ This repository contains the frontend of E-Commerce, a modern e-commerce web app
 
 ## 🚀 Frontend Features
 
-Browse products with search, filtering, and category navigation
-Product details with dynamic routing
-Pagination and sorting (price, rating, title)
-Shopping cart interface
-Wishlist
-authentication
-Responsive design 
+- Browse products with search, filtering, and category navigation
+- Product details with dynamic routing
+- Pagination and sorting (price, rating, title)
+- Shopping cart interface
+- Wishlist
+- authentication
+- Responsive design 
 
 ## 🧰 Frontend Tech Stack
 
-React.js
-JavaScript
-Tailwind CSS – styling
+- React.js
+- JavaScript
+- Tailwind CSS – styling
 
 ## 📌 Notes
 
-This repository contains frontend only
-It consumes REST APIs from DummyJSON (https://dummyjson.com)
-Wishlist data is stored client-side (localStorage / React Context)
+- This repository contains frontend only
+- It consumes REST APIs from DummyJSON (https://dummyjson.com)
+- Wishlist data is stored client-side (localStorage / React Context)
